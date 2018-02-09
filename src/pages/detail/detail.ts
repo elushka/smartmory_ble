@@ -3,7 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import { ToastController } from 'ionic-angular';
 import { BLE } from '@ionic-native/ble';
 
-// NeoPixel Service UUIDs FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF0
+// OG Service UUIDs FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF0
 const UNLOCK_SERVICE = 'ccc0';
 const LOCK = 'ccc2';
 
@@ -100,7 +100,7 @@ export class DetailPage {
     });
     toast.present(toast);
   }
-  
+
   setLock(event){
     console.log('setLock');
     console.log('This is the pin: '+this.pin);
