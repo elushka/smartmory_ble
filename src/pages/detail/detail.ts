@@ -106,15 +106,16 @@ export class DetailPage {
         buffer =>{
           let data = new Uint8Array(buffer);
             console.log('This is the data: '+data);
+            console.log('This is the data zero: '+data[0]);
             console.log('This is the data buffer: '+data.buffer);
-          /*
-          if(data[0] != 'xyz'){
-            this.showLongToast();
-          }
-          if(data[0] == ){
-            this.showToastWithCloseButton();
-          }
-          */
+
+          // if(data[0] == 0){
+          //   this.showLongToast();
+          // }
+          // if(data[0] == 1){
+          //   this.showToastWithCloseButton();
+          // }
+
         }
     )
 
