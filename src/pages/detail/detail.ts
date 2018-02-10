@@ -6,6 +6,7 @@ import { BLE } from '@ionic-native/ble';
 // OG Service UUIDs FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF0
 const UNLOCK_SERVICE = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF0';
 const LOCK = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF4';
+const NFC_READ = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF2';
 
 @Component({
   selector: 'page-detail',
@@ -100,7 +101,25 @@ export class DetailPage {
     });
     toast.present(toast);
   }
+  returnLaptop(){
+    this.ble.read(this.peripheral.id,UNLOCK_SERVICE,NFC_READ).then(
+        buffer =>{
+          let data = new Uint8Array(buffer);
+            console.log('This is the data: '+data);
+            console.log('This is the data buffer: '+data.buffer);
+          /*
+          if(data[0] != 'xyz'){
+            this.showLongToast();
+          }
+          if(data[0] == ){
+            this.showToastWithCloseButton();
+          }
+          */
+        }
+    )
 
+
+  }
   setLock(){
     console.log('setLock');
     console.log('This is the pin: '+this.pin);
@@ -111,6 +130,9 @@ export class DetailPage {
       () => console.log('Updated lock'),
       () => console.log('Error updating lock')
     );
+    if(this.pin == 2){
+      this.returnLaptop();
+    }
     console.log('The write is done!!!');
   }
 
