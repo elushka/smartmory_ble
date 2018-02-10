@@ -4,8 +4,8 @@ import { ToastController } from 'ionic-angular';
 import { BLE } from '@ionic-native/ble';
 
 // OG Service UUIDs FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF0
-const UNLOCK_SERVICE = 'ccc0';
-const LOCK = 'ccc2';
+const UNLOCK_SERVICE = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF0';
+const LOCK = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF4';
 
 @Component({
   selector: 'page-detail',
@@ -101,7 +101,7 @@ export class DetailPage {
     toast.present(toast);
   }
 
-  setLock(event){
+  setLock(){
     console.log('setLock');
     console.log('This is the pin: '+this.pin);
     let data = new Uint8Array([this.pin]);
@@ -111,13 +111,13 @@ export class DetailPage {
       () => console.log('Updated lock'),
       () => console.log('Error updating lock')
     );
-
+    console.log('The write is done!!!');
   }
 
   actLock(i){
     this.pin = i;
     console.log("Pin rn: "+this.pin);
-    this.setLock(event);
+    this.setLock();
   }
 
 }

@@ -4,7 +4,7 @@ import { NavController, AlertController } from 'ionic-angular';
 
 import { DetailPage } from '../detail/detail';
 
-const UNLOCK_SERVICE = 'ccc0';
+const UNLOCK_SERVICE = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF0';
 
 @Component({
   selector: 'page-home',
