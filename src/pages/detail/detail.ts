@@ -6,7 +6,7 @@ import { BLE } from '@ionic-native/ble';
 // OG Service UUIDs FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF0
 const UNLOCK_SERVICE = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF0';
 const LOCK = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF4';
-const NFC_READ = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF2';
+const NFC_READ = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF3';
 
 @Component({
   selector: 'page-detail',
@@ -106,15 +106,15 @@ export class DetailPage {
         buffer =>{
           let data = new Uint8Array(buffer);
             console.log('This is the data: '+data);
-            console.log('This is the data zero: '+data[0]);
+            console.log('This is the data zero: '+data[1]);
             console.log('This is the data buffer: '+data.buffer);
 
-          // if(data[0] == 0){
-          //   this.showLongToast();
-          // }
-          // if(data[0] == 1){
-          //   this.showToastWithCloseButton();
-          // }
+          if(data[1].toString() == "0"){
+            this.showLongToast();
+          }
+          if(data[1].toString() == "1"){
+            this.showToastWithCloseButton();
+          }
 
         }
     )

@@ -143,7 +143,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 // OG Service UUIDs FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF0
 var UNLOCK_SERVICE = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF0';
 var LOCK = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF4';
-var NFC_READ = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF2';
+var NFC_READ = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF3';
 var DetailPage = (function () {
     function DetailPage(navCtrl, navParams, ble, toastCtrl, ngZone) {
         var _this = this;
@@ -219,17 +219,18 @@ var DetailPage = (function () {
         toast.present(toast);
     };
     DetailPage.prototype.returnLaptop = function () {
+        var _this = this;
         this.ble.read(this.peripheral.id, UNLOCK_SERVICE, NFC_READ).then(function (buffer) {
             var data = new Uint8Array(buffer);
             console.log('This is the data: ' + data);
-            console.log('This is the data zero: ' + data[0]);
+            console.log('This is the data zero: ' + data[1]);
             console.log('This is the data buffer: ' + data.buffer);
-            // if(data[0] == 0){
-            //   this.showLongToast();
-            // }
-            // if(data[0] == 1){
-            //   this.showToastWithCloseButton();
-            // }
+            if (data[1].toString() == "0") {
+                _this.showLongToast();
+            }
+            if (data[1].toString() == "1") {
+                _this.showToastWithCloseButton();
+            }
         });
     };
     DetailPage.prototype.setLock = function () {
