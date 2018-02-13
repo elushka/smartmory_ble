@@ -8,12 +8,14 @@ import { BLE } from '@ionic-native/ble';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { DetailPage } from '../pages/detail/detail';
+import { AuthenticatePage } from '../pages/authenticate/authenticate';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    DetailPage
+    DetailPage,
+    AuthenticatePage
   ],
   imports: [
     BrowserModule,
@@ -23,7 +25,8 @@ import { DetailPage } from '../pages/detail/detail';
   entryComponents: [
     MyApp,
     HomePage,
-    DetailPage
+    DetailPage,
+    AuthenticatePage
   ],
   providers: [
     StatusBar,
