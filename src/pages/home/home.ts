@@ -3,7 +3,6 @@ import { Component, NgZone } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
 
 import { DetailPage } from '../detail/detail';
-import { AuthenticatePage } from '../authenticate/authenticate';
 
 const UNLOCK_SERVICE = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF0';
 
@@ -13,7 +12,7 @@ const UNLOCK_SERVICE = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF0';
 })
 export class HomePage {
 
-  public devices: any[] = [];
+  devices: any[] = [];
   statusMessage: string;
 
   constructor(public navCtrl: NavController,
