@@ -95,7 +95,7 @@ export class DetailPage {
     if(phrase == "2") {
         let toast = this.toastCtrl.create({
             message: 'NFC connection timeout, open shelf again',
-            duration: 2000,
+            duration: 5000,
         });
         toast.present();
     }
@@ -135,7 +135,7 @@ export class DetailPage {
       () => console.log('Updated lock'),
       () => console.log('Error updating lock')
     );
-    if(this.pin == 2){
+    if(this.pin == 9){
       this.returnLaptop();
     }
     console.log('The write is done!!!');
