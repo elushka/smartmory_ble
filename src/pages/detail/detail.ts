@@ -76,21 +76,30 @@ export class DetailPage {
     )
   }
 
-  showToastWithCloseButton() {
-    const toast = this.toastCtrl.create({
-      message: 'Laptop returned successfully!',
-      showCloseButton: true,
-      closeButtonText: 'Ok'
-    });
-    toast.present();
-  }
+  showLongToast(phrase: string) {
+      if(phrase == "0") {
+          let toast = this.toastCtrl.create({
+              message: 'Please return the correct device.',
+              duration: 2000,
 
-  showLongToast() {
-    let toast = this.toastCtrl.create({
-      message: 'Please return the correct device.',
-      duration: 2000,
-    });
-    toast.present();
+          });
+          toast.present();
+      }
+      if(phrase == "1") {
+          let toast = this.toastCtrl.create({
+              message: 'Laptop returned successfully.',
+              duration: 2000,
+          });
+          toast.present();
+        }
+    if(phrase == "2") {
+        let toast = this.toastCtrl.create({
+            message: 'NFC connection timeout, open shelf again',
+            duration: 2000,
+        });
+        toast.present();
+    }
+
   }
 
   ShelfUnlock(position: string) {
@@ -108,13 +117,8 @@ export class DetailPage {
             console.log('This is the data: '+data);
             console.log('This is the data zero: '+data[1]);
             console.log('This is the data buffer: '+data.buffer);
+            this.showLongToast(data[1].toString());
 
-          if(data[1].toString() == "0"){
-            this.showLongToast();
-          }
-          if(data[1].toString() == "1"){
-            this.showToastWithCloseButton();
-          }
 
         }
     )
