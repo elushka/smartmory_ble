@@ -27,8 +27,34 @@ export class AuthenticatePage {
     console.log('ionViewDidLoad AuthenticatePage');
   }
 
+  showLongToast(phrase: string) {
+    if(phrase == "0") {
+        let toast = this.toastCtrl.create({
+            message: 'Please return the correct device.',
+            duration: 2000,
+
+        });
+        toast.present();
+    }
+    if(phrase == "1") {
+        let toast = this.toastCtrl.create({
+            message: 'Laptop returned successfully.',
+            duration: 2000,
+        });
+        toast.present();
+      }
+  if(phrase == "2") {
+      let toast = this.toastCtrl.create({
+          message: 'NFC connection timeout, open shelf again',
+          duration: 5000,
+      });
+      toast.present();
+  }
+
+}
+
   returnLaptop(){
-    this.ble.read(this.Detail.peripheral.id,this.Detail.UNLOCK_SERVICE,NFC_READ).then(
+    this.ble.read(this.Detail.peripheral.id,"FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF0",NFC_READ).then(
         buffer =>{
           let data = new Uint8Array(buffer);
             console.log('This is the data: '+data);
