@@ -3,7 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import { ToastController } from 'ionic-angular';
 import { BLE } from '@ionic-native/ble';
 
-import { AuthenticatePage } from '../authenticate/authenticate';
+import { AuthenticatePage } from '../authenticate/authenticate'
 
 // OG Service UUIDs FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF0
 const UNLOCK_SERVICE = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF0';
@@ -15,6 +15,7 @@ const NFC_READ = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF3';
   templateUrl: 'detail.html',
 })
 export class DetailPage {
+  authenticatePage = AuthenticatePage;
 
   peripheral: any = {};
   pin: number;
@@ -138,7 +139,7 @@ export class DetailPage {
       () => console.log('Error updating lock')
     );
     if(this.pin == 9){
-      this.navCtrl.push(AuthenticatePage, {});
+      this.returnLaptop();
     }
     console.log('The write is done!!!');
   }
