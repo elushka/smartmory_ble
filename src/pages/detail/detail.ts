@@ -15,8 +15,7 @@ const NFC_READ = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF3';
   templateUrl: 'detail.html',
 })
 export class DetailPage {
-  authenticatePage = AuthenticatePage;
-
+  
   peripheral: any = {};
   pin: number;
   public compartments: any;
@@ -28,7 +27,7 @@ export class DetailPage {
     let device = navParams.get('device');
     this.ble.connect(device.id).subscribe(
       peripheral => this.onConnected(peripheral),
-      peripheral => this.onDeviceDisconnected(peripheral)
+      peripheral => this.onDeviceDisconnected(peripheral)      
     );
     this.compartments = [
                   "MacBook Pro 15",
@@ -71,20 +70,19 @@ export class DetailPage {
     console.log('ionViewDidLoad DetailPage');
   }
 
-  ionViewWillLeave() {
-    console.log('ionViewWillLeave disconnecting Bluetooth');
-    this.ble.disconnect(this.peripheral.id).then(
-      () => console.log('Disconnected ' + JSON.stringify(this.peripheral)),
-      () => console.log('ERROR disconnecting ' + JSON.stringify(this.peripheral))
-    )
-  }
+  // ionViewWillLeave() {
+  //   console.log('ionViewWillLeave disconnecting Bluetooth');
+  //   this.ble.disconnect(this.peripheral.id).then(
+  //     () => console.log('Disconnected ' + JSON.stringify(this.peripheral)),
+  //     () => console.log('ERROR disconnecting ' + JSON.stringify(this.peripheral))
+  //   )
+  // }
 
   showLongToast(phrase: string) {
       if(phrase == "0") {
           let toast = this.toastCtrl.create({
               message: 'Please return the correct device.',
               duration: 2000,
-
           });
           toast.present();
       }
@@ -102,7 +100,6 @@ export class DetailPage {
         });
         toast.present();
     }
-
   }
 
   ShelfUnlock(position: string) {
@@ -113,6 +110,7 @@ export class DetailPage {
     });
     toast.present(toast);
   }
+
   returnLaptop(){
     this.ble.read(this.peripheral.id,UNLOCK_SERVICE,NFC_READ).then(
         buffer =>{
@@ -121,13 +119,10 @@ export class DetailPage {
             console.log('This is the data zero: '+data[1]);
             console.log('This is the data buffer: '+data.buffer);
             this.showLongToast(data[1].toString());
-
-
         }
     )
-
-
   }
+
   setLock(){
     console.log('setLock');
     console.log('This is the pin: '+this.pin);
@@ -139,7 +134,10 @@ export class DetailPage {
       () => console.log('Error updating lock')
     );
     if(this.pin == 9){
-      this.returnLaptop();
+      var device = this.navParams.get('device')
+      this.navCtrl.push(AuthenticatePage, {
+        device: device
+      });
     }
     console.log('The write is done!!!');
   }
