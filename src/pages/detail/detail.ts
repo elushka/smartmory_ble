@@ -15,7 +15,8 @@ const NFC_READ = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF3';
   templateUrl: 'detail.html',
 })
 export class DetailPage {
-  
+
+  selectAction: any;
   peripheral: any = {};
   pin: number;
   public compartments: any;
@@ -103,13 +104,30 @@ export class DetailPage {
   }
 
   ShelfUnlock(position: string) {
+    var action = this.selectAction;
+    if (action == "borrow") {
+        let toast = this.toastCtrl.create({
+            message: 'Unlocked! Proceed to borrow',
+            duration: 2000,
+            position: position
+        });
+        toast.present(toast);
+    }
+    else if(action == "return"){
+        let toast = this.toastCtrl.create({
+            message: 'Unlocked! Proceed to return',
+            duration: 2000,
+            position: position
+        });
+        toast.present(toast);
+    }
 
-    let toast = this.toastCtrl.create({
-      message: 'Unlocked!',
-      duration: 2000,
-      position: position
-    });
-    toast.present(toast);
+    // let toast = this.toastCtrl.create({
+    //   message: 'Unlocked!',
+    //   duration: 2000,
+    //   position: position
+    // });
+    // toast.present(toast);
   }
 
   returnLaptop(){
