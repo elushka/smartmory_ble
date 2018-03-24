@@ -30,16 +30,16 @@ export class DetailPage {
       peripheral => this.onDeviceDisconnected(peripheral)      
     );
     this.compartments = [
-                  "MacBook Pro 15",
-                  "MacBook Air 13",
-                  "Lenovo ThinkPad",
-                  "MacBook Pro 13",
-                  "MacBook Pro 15",
-                  "Lenovo ThinkPad",
-                  "MacBook Air 11",
-                  "Empty Compartment",
-                  "MacBook Pro 13",
-                  "MacBook Pro 15",
+                  "Compartment 1",
+                  "Compartment 2",
+                  // "Lenovo ThinkPad",
+                  // "MacBook Pro 13",
+                  // "MacBook Pro 15",
+                  // "Lenovo ThinkPad",
+                  // "MacBook Air 11",
+                  // "Empty Compartment",
+                  // "MacBook Pro 13",
+                  // "MacBook Pro 15",
                 ];
   }
 
@@ -103,6 +103,7 @@ export class DetailPage {
   }
 
   ShelfUnlock(position: string) {
+
     let toast = this.toastCtrl.create({
       message: 'Unlocked!',
       duration: 2000,

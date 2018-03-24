@@ -14,6 +14,13 @@
   <br>
   <button [navPush]="authenticatePage">Go To Authenticate</button>
   <br>
+    <ion-item>
+        <ion-label>Action</ion-label>
+        <ion-select [(ngModel)]="Action" name="selectAction">
+            <ion-option value="borrow">Borrow</ion-option>
+            <ion-option value="return">Return</ion-option>
+        </ion-select>
+    </ion-item>
   To return a laptop, tap on an "Empty Compartment".
   <ion-list no-lines>
       <ion-item *ngFor="let laptop of compartments; let i = index">
