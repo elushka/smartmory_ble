@@ -2,149 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e7d11d28-28e2-4ed6-a921-17181736e39d" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/assets/fonts/ionicons.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/assets/fonts/ionicons.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/assets/fonts/ionicons.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/assets/fonts/ionicons.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/assets/fonts/noto-sans-bold.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/assets/fonts/noto-sans-bold.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/assets/fonts/noto-sans-regular.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/assets/fonts/noto-sans-regular.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/assets/fonts/noto-sans.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/assets/fonts/roboto-bold.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/assets/fonts/roboto-light.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/assets/fonts/roboto-medium.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/assets/fonts/roboto-regular.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/assets/fonts/roboto.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/build/.ion-diagnostic-typescript.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/binding/src/binding.o" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/binding/src/binding.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/binding/src/create_string.o" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/binding/src/create_string.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/binding/src/custom_function_bridge.o" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/binding/src/custom_function_bridge.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/binding/src/custom_importer_bridge.o" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/binding/src/custom_importer_bridge.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/binding/src/sass_context_wrapper.o" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/binding/src/sass_context_wrapper.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/binding/src/sass_types/boolean.o" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/binding/src/sass_types/boolean.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/binding/src/sass_types/color.o" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/binding/src/sass_types/color.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/binding/src/sass_types/error.o" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/binding/src/sass_types/error.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/binding/src/sass_types/factory.o" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/binding/src/sass_types/factory.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/binding/src/sass_types/list.o" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/binding/src/sass_types/list.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/binding/src/sass_types/map.o" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/binding/src/sass_types/map.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/binding/src/sass_types/null.o" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/binding/src/sass_types/null.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/binding/src/sass_types/number.o" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/binding/src/sass_types/number.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/binding/src/sass_types/string.o" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/binding/src/sass_types/string.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/ast.o" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/ast.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/ast_fwd_decl.o" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/ast_fwd_decl.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/base64vlq.o" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/base64vlq.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/bind.o" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/bind.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/cencode.o" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/cencode.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/check_nesting.o" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/check_nesting.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/color_maps.o" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/color_maps.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/constants.o" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/constants.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/context.o" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/context.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/cssize.o" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/cssize.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/emitter.o" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/emitter.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/environment.o" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/environment.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/error_handling.o" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/error_handling.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/eval.o" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/eval.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/expand.o" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/expand.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/extend.o" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/extend.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/file.o" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/file.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/functions.o" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/functions.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/inspect.o" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/inspect.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/json.o" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/json.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/lexer.o" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/lexer.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/listize.o" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/listize.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/memory/SharedPtr.o" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/memory/SharedPtr.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/node.o" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/node.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/output.o" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/output.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/parser.o" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/parser.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/plugins.o" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/plugins.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/position.o" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/position.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/prelexer.o" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/prelexer.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/remove_placeholders.o" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/remove_placeholders.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/sass.o" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/sass.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/sass2scss.o" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/sass2scss.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/sass_context.o" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/sass_context.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/sass_functions.o" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/sass_functions.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/sass_util.o" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/sass_util.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/sass_values.o" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/sass_values.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/source_map.o" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/source_map.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/subset_map.o" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/subset_map.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/to_c.o" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/to_c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/to_value.o" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/to_value.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/units.o" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/units.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/utf8_string.o" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/utf8_string.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/util.o" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/util.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/values.o" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/obj.target/libsass/src/libsass/src/values.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/sass.a" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/sass.a" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/Smartmory.xcodeproj/project.xcworkspace/xcuserdata/Jadedh.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="$PROJECT_DIR$/platforms/ios/Smartmory.xcodeproj/project.xcworkspace/xcuserdata/Jadedh.xcuserdatad/UserInterfaceState.xcuserstate" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/.bin/node-sass" afterPath="$PROJECT_DIR$/node_modules/.bin/node-sass" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Makefile" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Makefile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/binding/src/binding.o.d" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/binding/src/binding.o.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/binding/src/create_string.o.d" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/binding/src/create_string.o.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/binding/src/custom_function_bridge.o.d" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/binding/src/custom_function_bridge.o.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/binding/src/custom_importer_bridge.o.d" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/binding/src/custom_importer_bridge.o.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/binding/src/sass_context_wrapper.o.d" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/binding/src/sass_context_wrapper.o.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/binding/src/sass_types/boolean.o.d" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/binding/src/sass_types/boolean.o.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/binding/src/sass_types/color.o.d" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/binding/src/sass_types/color.o.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/binding/src/sass_types/error.o.d" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/binding/src/sass_types/error.o.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/binding/src/sass_types/factory.o.d" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/binding/src/sass_types/factory.o.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/binding/src/sass_types/list.o.d" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/binding/src/sass_types/list.o.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/binding/src/sass_types/map.o.d" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/binding/src/sass_types/map.o.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/binding/src/sass_types/null.o.d" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/binding/src/sass_types/null.o.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/binding/src/sass_types/number.o.d" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/binding/src/sass_types/number.o.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/binding/src/sass_types/string.o.d" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/binding/src/sass_types/string.o.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/ast.o.d" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/ast.o.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/ast_fwd_decl.o.d" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/ast_fwd_decl.o.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/base64vlq.o.d" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/base64vlq.o.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/bind.o.d" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/bind.o.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/cencode.o.d" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/cencode.o.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/check_nesting.o.d" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/check_nesting.o.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/color_maps.o.d" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/color_maps.o.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/constants.o.d" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/constants.o.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/context.o.d" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/context.o.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/cssize.o.d" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/cssize.o.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/emitter.o.d" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/emitter.o.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/environment.o.d" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/environment.o.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/error_handling.o.d" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/error_handling.o.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/eval.o.d" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/eval.o.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/expand.o.d" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/expand.o.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/extend.o.d" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/extend.o.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/file.o.d" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/file.o.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/functions.o.d" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/functions.o.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/inspect.o.d" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/inspect.o.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/json.o.d" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/json.o.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/lexer.o.d" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/lexer.o.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/listize.o.d" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/listize.o.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/memory/SharedPtr.o.d" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/memory/SharedPtr.o.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/node.o.d" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/node.o.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/output.o.d" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/output.o.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/parser.o.d" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/parser.o.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/plugins.o.d" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/plugins.o.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/position.o.d" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/position.o.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/prelexer.o.d" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/prelexer.o.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/remove_placeholders.o.d" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/remove_placeholders.o.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/sass.o.d" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/sass.o.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/sass2scss.o.d" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/sass2scss.o.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/sass_context.o.d" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/sass_context.o.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/sass_functions.o.d" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/sass_functions.o.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/sass_util.o.d" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/sass_util.o.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/sass_values.o.d" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/sass_values.o.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/source_map.o.d" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/source_map.o.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/subset_map.o.d" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/subset_map.o.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/to_c.o.d" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/to_c.o.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/to_value.o.d" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/to_value.o.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/units.o.d" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/units.o.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/utf8_string.o.d" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/utf8_string.o.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/util.o.d" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/util.o.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/values.o.d" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/Release/.deps/Release/obj.target/libsass/src/libsass/src/values.o.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/binding.target.mk" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/binding.target.mk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/config.gypi" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/config.gypi" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/build/src/libsass.target.mk" afterPath="$PROJECT_DIR$/node_modules/node-sass/build/src/libsass.target.mk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/Smartmory.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/platforms/ios/Smartmory.xcodeproj/project.pbxproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/Smartmory/Smartmory-Info.plist" afterPath="$PROJECT_DIR$/platforms/ios/Smartmory/Smartmory-Info.plist" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/detail/detail.html" afterPath="$PROJECT_DIR$/src/pages/detail/detail.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/detail/detail.ts" afterPath="$PROJECT_DIR$/src/pages/detail/detail.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/index.html" afterPath="$PROJECT_DIR$/www/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -161,8 +21,8 @@
       <file leaf-file-name="detail.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/detail/detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="45" lean-forward="false" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
+            <state relative-caret-position="60">
+              <caret line="4" column="28" lean-forward="false" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -181,8 +41,8 @@
       <file leaf-file-name="detail.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pages/detail/detail.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="105" column="0" lean-forward="false" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
+            <state relative-caret-position="267">
+              <caret line="109" column="33" lean-forward="false" selection-start-line="109" selection-start-column="33" selection-end-line="109" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -253,6 +113,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>@NgModule</find>
+      <find>peripheral</find>
       <find>ShelfUn</find>
     </findStrings>
   </component>
@@ -264,8 +125,8 @@
       <list>
         <option value="$PROJECT_DIR$/src/pages/locker/locker.html" />
         <option value="$PROJECT_DIR$/src/pages/locker/locker.scss" />
-        <option value="$PROJECT_DIR$/src/pages/detail/detail.ts" />
         <option value="$PROJECT_DIR$/src/pages/detail/detail.html" />
+        <option value="$PROJECT_DIR$/src/pages/detail/detail.ts" />
       </list>
     </option>
   </component>
@@ -280,8 +141,7 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="368" />
+  <component name="ProjectFrameBounds">
     <option name="y" value="22" />
     <option name="width" value="1280" />
     <option name="height" value="715" />
@@ -486,15 +346,15 @@
       <updated>1518289159937</updated>
       <workItem from="1518289161126" duration="1931000" />
       <workItem from="1518554388698" duration="1886000" />
-      <workItem from="1521918886243" duration="7712000" />
+      <workItem from="1521918886243" duration="9658000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11529000" />
+    <option name="totallyTimeSpent" value="13475000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1280" height="715" extended-state="6" />
+    <frame x="0" y="22" width="1280" height="715" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -712,16 +572,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/detail/detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="45" lean-forward="false" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
+        <state relative-caret-position="60">
+          <caret line="4" column="28" lean-forward="false" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/detail/detail.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="105" column="0" lean-forward="false" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
+        <state relative-caret-position="267">
+          <caret line="109" column="33" lean-forward="false" selection-start-line="109" selection-start-column="33" selection-end-line="109" selection-end-column="33" />
           <folding />
         </state>
       </provider>
