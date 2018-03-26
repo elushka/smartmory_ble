@@ -9,27 +9,27 @@
   "installed_plugins": {
     "cordova-plugin-ble-central": {
       "BLUETOOTH_USAGE_DESCRIPTION": " ",
-      "PACKAGE_NAME": "smartlocker"
+      "PACKAGE_NAME": "com.company.smartlocker"
     },
     "cordova-plugin-device": {
-      "PACKAGE_NAME": "smartlocker"
+      "PACKAGE_NAME": "com.company.smartlocker"
     },
     "cordova-plugin-splashscreen": {
-      "PACKAGE_NAME": "smartlocker"
+      "PACKAGE_NAME": "com.company.smartlocker"
     },
     "cordova-plugin-statusbar": {
-      "PACKAGE_NAME": "smartlocker"
+      "PACKAGE_NAME": "com.company.smartlocker"
     },
     "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "smartlocker"
+      "PACKAGE_NAME": "com.company.smartlocker"
     },
     "ionic-plugin-keyboard": {
-      "PACKAGE_NAME": "smartlocker"
+      "PACKAGE_NAME": "com.company.smartlocker"
     }
   },
   "dependent_plugins": {
     "cordova-plugin-compat": {
-      "PACKAGE_NAME": "smartlocker"
+      "PACKAGE_NAME": "com.company.smartlocker"
     }
   }
 }

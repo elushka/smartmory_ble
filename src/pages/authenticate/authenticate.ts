@@ -3,7 +3,9 @@ import { NavController, NavParams } from 'ionic-angular';
 import { ToastController } from 'ionic-angular';
 import { BLE } from '@ionic-native/ble';
 
+// OG Service UUIDs FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF0
 const UNLOCK_SERVICE = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF0';
+const LOCK = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF4';
 const NFC_READ = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF3';
 
 @Component({
@@ -12,15 +14,37 @@ const NFC_READ = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF3';
 })
 export class AuthenticatePage {
 
-  peripheral: any = {};
-  constructor(public navCtrl: NavController,
-              public navParams: NavParams,
-              private ble: BLE,
-              public toastCtrl: ToastController,
-              private ngZone: NgZone) {
-  let device = navParams.get('device');
+    selectAction: any;
+    peripheral: any = {};
+    pin: number;
+    constructor(public navCtrl: NavController,
+                public navParams: NavParams,
+                private ble: BLE,
+                public toastCtrl: ToastController,
+                private ngZone: NgZone) {
+      let device = navParams.get('device');
+      this.ble.connect(device.id).subscribe(
+        peripheral => this.onConnected(peripheral),
+        peripheral => this.onDeviceDisconnected(peripheral)      
+      );
   
   }
+
+  onConnected(peripheral) {
+    console.log('Connected to ' + peripheral.name + ' ' + peripheral.id);
+    this.ngZone.run(() => {
+      this.peripheral = peripheral;
+    });
+
+  }
+
+  onDeviceDisconnected(peripheral) {
+    let toast = this.toastCtrl.create({
+      message: 'The peripheral unexpectedly disconnected',
+      duration: 3000,
+      position: 'center'
+    });
+}
 
   showLongToast(phrase: string) {
     if(phrase == "0") {
@@ -40,7 +64,7 @@ export class AuthenticatePage {
       }
   if(phrase == "2") {
       let toast = this.toastCtrl.create({
-          message: 'NFC connection timeout, open shelf again',
+          message: 'NFC connection timeout, retry again',
           duration: 5000,
       });
       toast.present();
@@ -59,4 +83,4 @@ returnLaptop(){
       }
   )
 }
-}
+  }

@@ -3,7 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import { ToastController } from 'ionic-angular';
 import { BLE } from '@ionic-native/ble';
 
-import { AuthenticatePage } from '../authenticate/authenticate'
+import { AuthenticatePage } from '../authenticate/authenticate';
 
 // OG Service UUIDs FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF0
 const UNLOCK_SERVICE = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF0';
@@ -15,7 +15,7 @@ const NFC_READ = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF3';
   templateUrl: 'detail.html',
 })
 export class DetailPage {
-
+  public device;
   selectAction: any;
   peripheral: any = {};
   pin: number;
@@ -25,31 +25,23 @@ export class DetailPage {
               private ble: BLE,
               public toastCtrl: ToastController,
               private ngZone: NgZone) {
-    let device = navParams.get('device');
-    this.ble.connect(device.id).subscribe(
+    this.device = navParams.get('device');
+    this.ble.connect(this.device.id).subscribe(
       peripheral => this.onConnected(peripheral),
       peripheral => this.onDeviceDisconnected(peripheral)      
     );
     this.compartments = [
                   "Compartment 1",
                   "Compartment 2",
-                  // "Lenovo ThinkPad",
-                  // "MacBook Pro 13",
-                  // "MacBook Pro 15",
-                  // "Lenovo ThinkPad",
-                  // "MacBook Air 11",
-                  // "Empty Compartment",
-                  // "MacBook Pro 13",
-                  // "MacBook Pro 15",
                 ];
   }
 
-  onConnected(peripheral) {
+
+    onConnected(peripheral) {
     console.log('Connected to ' + peripheral.name + ' ' + peripheral.id);
     this.ngZone.run(() => {
       this.peripheral = peripheral;
     });
-
   }
 
   onDeviceDisconnected(peripheral) {
@@ -69,6 +61,14 @@ export class DetailPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DetailPage');
+  }
+
+  exitConnection() {
+    this.navCtrl.pop();
+    this.ble.disconnect(this.peripheral.id).then(
+          () => console.log('Disconnected ' + JSON.stringify(this.peripheral)),
+          () => console.log('ERROR disconnecting ' + JSON.stringify(this.peripheral))
+        )
   }
 
   // ionViewWillLeave() {
@@ -152,12 +152,9 @@ export class DetailPage {
       () => console.log('Updated lock'),
       () => console.log('Error updating lock')
     );
-    if(this.pin == 9){
-      var device = this.navParams.get('device')
-      this.navCtrl.push(AuthenticatePage, {
-        device: device
-      });
-    }
+    this.navCtrl.push(AuthenticatePage, {
+      device: this.device
+        });
     console.log('The write is done!!!');
   }
 

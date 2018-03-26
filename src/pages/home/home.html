@@ -14,9 +14,10 @@
 <ion-content>
    <ion-list>
     <button ion-item *ngFor="let device of devices" (click)="deviceSelected(device)">
-      <h2>{{ device.name || 'Unnamed' }}</h2>
-      <p>{{ device.id }}</p>
-      <p>RSSI: {{device.rssi}}</p>
+      <h2>Smartmory @ Photonics</h2>
+      <!-- <h2>{{ device.name || 'Unnamed' }}</h2> -->
+      <!-- <p>{{ device.id }}</p>
+      <p>RSSI: {{device.rssi}}</p> -->
     </button>
    </ion-list>
 </ion-content>

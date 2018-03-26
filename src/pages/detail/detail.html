@@ -1,27 +1,27 @@
 
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>{{ peripheral.name || 'Device' }}</ion-title>
-  </ion-navbar>
+  <ion-toolbar>
+    <button ion-button clear large (click)="exitConnection()">
+      <ion-icon name="arrow-back"></ion-icon> 
+    </button>
+    <!-- <ion-title>{{ peripheral.name || 'Device' }}</ion-title> -->
+    <ion-title text-wrap>Smartmory @ Photonics</ion-title>
+  </ion-toolbar>
 
 </ion-header>
 
 <ion-content class="padding">
 
 <ion-content padding>
-  To get started, select one of the available laptops.
-  <br>
-  <button [navPush]="authenticatePage">Go To Authenticate</button>
-  <br>
-    <ion-item>
+  To get started, choose Borrow or Return.
+<!--   <ion-item>
         <ion-label>Action</ion-label>
         <ion-select [(ngModel)]="Action" name="selectAction">
             <ion-option value="borrow">Borrow</ion-option>
             <ion-option value="return">Return</ion-option>
         </ion-select>
-    </ion-item>
-  To return a laptop, tap on an "Empty Compartment".
+    </ion-item> -->
   <ion-list no-lines>
       <ion-item *ngFor="let laptop of compartments; let i = index">
       <button ion-button default item-center (click)="ShelfUnlock('middle'); actLock(i+2);">{{laptop}}</button>

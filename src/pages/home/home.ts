@@ -30,7 +30,7 @@ export class HomePage {
     this.devices = [];  // clear existing list
     this.ble.scan([UNLOCK_SERVICE], 4).subscribe(
       device => this.onDiscoveredDevice(device),
-      e => this.showAlert('Scan Failed', 'Error scanning for BLE devices.')
+      //e => this.showAlert('Scan Failed', 'Error scanning for BLE devices.')
     );
 
     console.log('Scanning for Bluetooth LE Devices');
@@ -48,6 +48,7 @@ export class HomePage {
     this.navCtrl.push(DetailPage, {
       device: device
     });
+    
   }
 
   setStatus(message) {
