@@ -11,7 +11,7 @@ const UNLOCK_SERVICE = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF0';
   templateUrl: 'home.html'
 })
 export class HomePage {
-
+  public detected: number = null;
   devices: any[] = [];
   statusMessage: string;
 
@@ -23,6 +23,7 @@ export class HomePage {
 
   ionViewDidEnter() {
     console.log('ionViewDidEnter');
+    this.devices = [];
     this.scan();
   }
 
@@ -32,7 +33,12 @@ export class HomePage {
       device => this.onDiscoveredDevice(device),
       //e => this.showAlert('Scan Failed', 'Error scanning for BLE devices.')
     );
-
+    if (this.devices = []) {
+      this.detected = 1;
+    }
+    else {
+      this.detected = 0;
+    }
     console.log('Scanning for Bluetooth LE Devices');
   }
 

@@ -4,6 +4,8 @@ import { ToastController } from 'ionic-angular';
 import { BLE } from '@ionic-native/ble';
 
 import { AuthenticatePage } from '../authenticate/authenticate';
+import { LoanPage } from '../loan/loan';
+import { ReturnPage } from '../return/return';
 
 // OG Service UUIDs FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF0
 const UNLOCK_SERVICE = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF0';
@@ -140,6 +142,18 @@ export class DetailPage {
             this.showLongToast(data[1].toString());
         }
     )
+  }
+
+  loanDevice() {
+    this.navCtrl.push(LoanPage, {
+      device: this.device
+        });
+  }
+
+  returnDevice() {
+    this.navCtrl.push(ReturnPage, {
+      device: this.device
+        });
   }
 
   setLock(){

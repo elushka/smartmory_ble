@@ -12,6 +12,7 @@
 </ion-header>
 
 <ion-content>
+    <div ng-show="detected == 1">No Smartmory Locker Detected {{detected}}</div>
    <ion-list>
     <button ion-item *ngFor="let device of devices" (click)="deviceSelected(device)">
       <h2>Smartmory @ Photonics</h2>

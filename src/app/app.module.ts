@@ -9,13 +9,21 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { DetailPage } from '../pages/detail/detail';
 import { AuthenticatePage } from '../pages/authenticate/authenticate';
+import { LoanPage } from '../pages/loan/loan';
+import { ReturnPage } from '../pages/return/return';
+import { CompleteloanPage } from '../pages/completeloan/completeloan';
+import { ValidatereturnPage } from '../pages/validatereturn/validatereturn';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     DetailPage,
-    AuthenticatePage
+    AuthenticatePage,
+    LoanPage,
+    ReturnPage,
+    CompleteloanPage,
+    ValidatereturnPage
   ],
   imports: [
     BrowserModule,
@@ -26,7 +34,11 @@ import { AuthenticatePage } from '../pages/authenticate/authenticate';
     MyApp,
     HomePage,
     DetailPage,
-    AuthenticatePage
+    AuthenticatePage,
+    LoanPage,
+    ReturnPage,
+    CompleteloanPage,
+    ValidatereturnPage
   ],
   providers: [
     StatusBar,
