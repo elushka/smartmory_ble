@@ -3,17 +3,14 @@ import { NavController, NavParams } from 'ionic-angular';
 import { ToastController } from 'ionic-angular';
 import { BLE } from '@ionic-native/ble';
 
+import { HomePage } from '../home/home';
+
 // OG Service UUIDs FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF0
 const UNLOCK_SERVICE = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF0';
+const LOAN_AVAIL = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF1';
 const LOCK = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF4';
 const NFC_READ = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF3';
-
-/**
- * Generated class for the CompleteloanPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
+const LOAN_STATUS = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF2';
 
 @Component({
   selector: 'page-completeloan',
@@ -21,21 +18,24 @@ const NFC_READ = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF3';
 })
 export class CompleteloanPage {
 
+  public device;
   selectAction: any;
   peripheral: any = {};
   pin: number;
+  public compartments: any;
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               private ble: BLE,
               public toastCtrl: ToastController,
               private ngZone: NgZone) {
-    let device = navParams.get('device');
-    this.ble.connect(device.id).subscribe(
+    this.pin = navParams.get('pin');
+    this.device = navParams.get('device');
+    this.ble.connect(this.device.id).subscribe(
       peripheral => this.onConnected(peripheral),
       peripheral => this.onDeviceDisconnected(peripheral)      
     );
+  }
 
-}
 
 onConnected(peripheral) {
   console.log('Connected to ' + peripheral.name + ' ' + peripheral.id);
@@ -56,50 +56,55 @@ onDeviceDisconnected(peripheral) {
 showLongToast(phrase: string) {
   if(phrase == "0") {
       let toast = this.toastCtrl.create({
-          message: 'Please return the correct device.',
-          duration: 2000,
+          message: 'Please shut the door.',
+          duration: 5000,
 
       });
       toast.present();
   }
   if(phrase == "1") {
       let toast = this.toastCtrl.create({
-          message: 'Laptop returned successfully.',
-          duration: 2000,
+          message: 'Loan completed!',
+          duration: 5000,
       });
       toast.present();
+      this.exitConnection();
+      this.navCtrl.popToRoot();
     }
 if(phrase == "2") {
     let toast = this.toastCtrl.create({
-        message: 'NFC connection timeout, retry again',
+        message: 'Please take the device.',
         duration: 5000,
     });
     toast.present();
+    this.actLock();
 }
 
 }
 
-setLock(){
-console.log('setLock');
-console.log('This is the pin: '+this.pin);
-let data = new Uint8Array([this.pin]);
-console.log('This is the data: '+data);
-console.log('This is the data buffer: '+data.buffer);
-this.ble.write(this.peripheral.id, UNLOCK_SERVICE, LOCK, data.buffer).then(
-  () => console.log('Updated lock'),
-  () => console.log('Error updating lock')
-);
-console.log('The write is done!!!');
+actLock(){
+  console.log("Pin rn: "+this.pin);
+  console.log('setLock');
+  console.log('This is the pin: '+this.pin);
+  let data = new Uint8Array([this.pin]);
+  console.log('This is the data: '+data);
+  console.log('This is the data buffer: '+data.buffer);
+  this.ble.write(this.peripheral.id, UNLOCK_SERVICE, LOCK, data.buffer).then(
+    () => console.log('Updated lock'),
+    () => console.log('Error updating lock')
+  );
+  console.log('The write is done!!!');
 }
 
-actLock(i){
-this.pin = i;
-console.log("Pin rn: "+this.pin);
-this.setLock();
+exitConnection() {
+  this.ble.disconnect(this.peripheral.id).then(
+        () => console.log('Disconnected ' + JSON.stringify(this.peripheral)),
+        () => console.log('ERROR disconnecting ' + JSON.stringify(this.peripheral))
+      )
 }
 
-returnLaptop(){
-this.ble.read(this.peripheral.id,UNLOCK_SERVICE,NFC_READ).then(
+loanValidate(){
+this.ble.read(this.peripheral.id,UNLOCK_SERVICE,LOAN_STATUS).then(
     buffer =>{
       let data = new Uint8Array(buffer);
         console.log('This is the data: '+data);

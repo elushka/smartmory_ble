@@ -10,7 +10,9 @@ import { ReturnPage } from '../return/return';
 // OG Service UUIDs FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF0
 const UNLOCK_SERVICE = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF0';
 const LOCK = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF4';
-const NFC_READ = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF3';
+const NFC_READ = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF2';
+const CHECK = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF1';
+const SHELF = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF4';
 
 @Component({
   selector: 'page-detail',
@@ -32,10 +34,7 @@ export class DetailPage {
       peripheral => this.onConnected(peripheral),
       peripheral => this.onDeviceDisconnected(peripheral)      
     );
-    this.compartments = [
-                  "Compartment 1",
-                  "Compartment 2",
-                ];
+
   }
 
 

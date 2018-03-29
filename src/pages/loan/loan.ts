@@ -3,16 +3,13 @@ import { NavController, NavParams } from 'ionic-angular';
 import { ToastController } from 'ionic-angular';
 import { BLE } from '@ionic-native/ble';
 
+import { CompleteloanPage } from '../completeloan/completeloan';
+
 // OG Service UUIDs FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF0
 const UNLOCK_SERVICE = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF0';
+const LOAN_AVAIL = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF1';
 const LOCK = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF4';
 const NFC_READ = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF3';
-/**
- * Generated class for the LoanPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
 
 @Component({
   selector: 'page-loan',
@@ -20,20 +17,27 @@ const NFC_READ = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF3';
 })
 export class LoanPage {
 
+  public device;
   selectAction: any;
-    peripheral: any = {};
-    pin: number;
-    constructor(public navCtrl: NavController,
-                public navParams: NavParams,
-                private ble: BLE,
-                public toastCtrl: ToastController,
-                private ngZone: NgZone) {
-      let device = navParams.get('device');
-      this.ble.connect(device.id).subscribe(
-        peripheral => this.onConnected(peripheral),
-        peripheral => this.onDeviceDisconnected(peripheral)      
-      );
-  
+  peripheral: any = {};
+  pin: number;
+  public compartments: any;
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              private ble: BLE,
+              public toastCtrl: ToastController,
+              private ngZone: NgZone) {
+    this.device = navParams.get('device');
+    this.ble.connect(this.device.id).subscribe(
+      peripheral => this.onConnected(peripheral),
+      peripheral => this.onDeviceDisconnected(peripheral)      
+    );
+    this.compartments = [];
+  }
+
+  ionViewWillEnter() {
+    console.log('ionViewWillEnter Updating Table');
+    this.checkAvailability();
   }
 
   onConnected(peripheral) {
@@ -52,33 +56,28 @@ export class LoanPage {
     });
 }
 
-  showLongToast(phrase: string) {
-    if(phrase == "0") {
-        let toast = this.toastCtrl.create({
-            message: 'Please return the correct device.',
-            duration: 2000,
+exitConnection() {
+  this.ble.disconnect(this.peripheral.id).then(
+        () => console.log('Disconnected ' + JSON.stringify(this.peripheral)),
+        () => console.log('ERROR disconnecting ' + JSON.stringify(this.peripheral))
+      )
+}
 
-        });
-        toast.present();
-    }
-    if(phrase == "1") {
-        let toast = this.toastCtrl.create({
-            message: 'Laptop returned successfully.',
-            duration: 2000,
-        });
-        toast.present();
-      }
-  if(phrase == "2") {
+showLongToast(phrase: string) {
+  if(phrase == "0") {
       let toast = this.toastCtrl.create({
-          message: 'NFC connection timeout, retry again',
+          message: 'No remaining laptops :(',
           duration: 5000,
       });
       toast.present();
+      this.exitConnection();
+      this.navCtrl.popToRoot();
   }
-
 }
 
-setLock(){
+actLock(i){
+  this.pin = i;
+  console.log("Pin rn: "+this.pin);
   console.log('setLock');
   console.log('This is the pin: '+this.pin);
   let data = new Uint8Array([this.pin]);
@@ -88,25 +87,51 @@ setLock(){
     () => console.log('Updated lock'),
     () => console.log('Error updating lock')
   );
+  this.navCtrl.push(CompleteloanPage, {
+    device: this.device,
+    pin: this.pin
+      });
   console.log('The write is done!!!');
 }
 
-actLock(i){
-  this.pin = i;
-  console.log("Pin rn: "+this.pin);
-  this.setLock();
-}
-
-returnLaptop(){
-  this.ble.read(this.peripheral.id,UNLOCK_SERVICE,NFC_READ).then(
+checkAvailability(){
+  this.ble.read(this.peripheral.id,UNLOCK_SERVICE,LOAN_AVAIL).then(
       buffer =>{
         let data = new Uint8Array(buffer);
           console.log('This is the data: '+data);
+          console.log('This is the data [0]: '+data[0]);
           console.log('This is the data zero: '+data[1]);
           console.log('This is the data buffer: '+data.buffer);
-          this.showLongToast(data[1].toString());
+          if(data[1] == 33) {
+            this.compartments[0] = "Macbook";
+            this.compartments[1] = 'Empty';
+          }
+          else if (data[1] == 55) {
+            this.compartments[0] = "Windows";
+            this.compartments[1] = 'Empty';
+          }
+          else if (data[1] == 24) {
+            this.compartments[0] = 'Empty';
+            this.compartments[1] = "Macbook";
+          }
+          else if (data[1] == 40) {
+            this.compartments[0] = 'Empty';
+            this.compartments[1] = "Windows";
+          }
+          else if (data[1] == 73) {
+            this.compartments[0] = "Macbook";
+            this.compartments[1] = "Windows";
+          }
+          else if (data[1] == 79) {
+            this.compartments[0] = "Windows";
+            this.compartments[1] = "Macbook";
+          }
+          else if(data[1] == 0) {
+            this.showLongToast(data[1].toString());
+          }
       }
   )
 }
-  }
+
+}
 
