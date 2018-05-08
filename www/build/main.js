@@ -117,7 +117,7 @@ HomePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["n" /* Component */])({
         selector: 'page-home',template:/*ion-inline-start:"/Users/erostin/Desktop/smartmory_ble/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Smartmory\n    </ion-title>\n    <ion-buttons end>\n      <button ion-button (click)="scan()">\n        Scan\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n   <ion-list>\n    <button ion-item *ngFor="let device of devices" (click)="deviceSelected(device)">\n      <button ion-item>Smartmory @ Photonics</button>\n      <!-- <h2>{{ device.name || \'Unnamed\' }}</h2> -->\n      <!-- <p>{{ device.id }}</p>\n      <p>RSSI: {{device.rssi}}</p> -->\n    </button>\n   </ion-list>\n</ion-content>\n\n<ion-footer>\n  <ion-toolbar>\n    <p>{{ statusMessage }}</p>\n  </ion-toolbar>\n</ion-footer>\n'/*ion-inline-end:"/Users/erostin/Desktop/smartmory_ble/src/pages/home/home.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* NavController */],
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* NavController */],
         __WEBPACK_IMPORTED_MODULE_0__ionic_native_ble__["a" /* BLE */],
         __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* AlertController */],
         __WEBPACK_IMPORTED_MODULE_1__angular_core__["P" /* NgZone */]])
@@ -297,10 +297,10 @@ DetailPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-detail',template:/*ion-inline-start:"/Users/erostin/Desktop/smartmory_ble/src/pages/detail/detail.html"*/'\n<ion-header>\n\n  <ion-toolbar>\n    <button ion-button clear large (click)="exitConnection()">\n      <ion-icon name="arrow-back"></ion-icon> \n    </button>\n    <!-- <ion-title>{{ peripheral.name || \'Device\' }}</ion-title> -->\n    <ion-title text-wrap>Smartmory @ Photonics</ion-title>\n  </ion-toolbar>\n\n</ion-header>\n\n<ion-content class="padding">\n\n<ion-content padding>\n  To get started, choose an option.\n  <ion-list no-lines>\n      <!-- <ion-item *ngFor="let laptop of compartments; let i = index"> -->\n      <!-- <button ion-button default item-center (click)="ShelfUnlock(\'middle\'); actLock(i+2);">{{laptop}}</button> -->\n      <button ion-button default item-center (click)="loanDevice();">Loan</button>\n      <button ion-button default item-center (click)="returnDevice();">Return</button>\n      <!-- </ion-item> -->\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/erostin/Desktop/smartmory_ble/src/pages/detail/detail.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */],
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
         __WEBPACK_IMPORTED_MODULE_2__ionic_native_ble__["a" /* BLE */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* ToastController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ToastController */],
         __WEBPACK_IMPORTED_MODULE_0__angular_core__["P" /* NgZone */]])
 ], DetailPage);
 
@@ -398,10 +398,10 @@ AuthenticatePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-authenticate',template:/*ion-inline-start:"/Users/erostin/Desktop/smartmory_ble/src/pages/authenticate/authenticate.html"*/'\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Authentication</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-item>\n    <button ion-button default item-center (click)="returnLaptop();">Authorize Return</button>\n    </ion-item>\n</ion-content>\n'/*ion-inline-end:"/Users/erostin/Desktop/smartmory_ble/src/pages/authenticate/authenticate.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */],
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
         __WEBPACK_IMPORTED_MODULE_2__ionic_native_ble__["a" /* BLE */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* ToastController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ToastController */],
         __WEBPACK_IMPORTED_MODULE_0__angular_core__["P" /* NgZone */]])
 ], AuthenticatePage);
 
@@ -438,9 +438,10 @@ var LOAN_AVAIL = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF1';
 var LOCK = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF4';
 var NFC_READ = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF3';
 var LoanPage = (function () {
-    function LoanPage(navCtrl, navParams, ble, toastCtrl, ngZone) {
+    function LoanPage(navCtrl, loadingCtrl, navParams, ble, toastCtrl, ngZone) {
         var _this = this;
         this.navCtrl = navCtrl;
+        this.loadingCtrl = loadingCtrl;
         this.navParams = navParams;
         this.ble = ble;
         this.toastCtrl = toastCtrl;
@@ -453,6 +454,7 @@ var LoanPage = (function () {
     LoanPage.prototype.ionViewWillEnter = function () {
         console.log('ionViewWillEnter Updating Table');
         this.checkAvailability();
+        this.presentLoadingIos();
     };
     LoanPage.prototype.onConnected = function (peripheral) {
         var _this = this;
@@ -471,6 +473,14 @@ var LoanPage = (function () {
     LoanPage.prototype.exitConnection = function () {
         var _this = this;
         this.ble.disconnect(this.peripheral.id).then(function () { return console.log('Disconnected ' + JSON.stringify(_this.peripheral)); }, function () { return console.log('ERROR disconnecting ' + JSON.stringify(_this.peripheral)); });
+    };
+    LoanPage.prototype.presentLoadingIos = function () {
+        var loading = this.loadingCtrl.create({
+            spinner: 'ios',
+            content: 'Checking for laptops...',
+            duration: 3000
+        });
+        loading.present();
     };
     LoanPage.prototype.showLongToast = function (phrase) {
         if (phrase == "0") {
@@ -500,6 +510,7 @@ var LoanPage = (function () {
     };
     LoanPage.prototype.checkAvailability = function () {
         var _this = this;
+        console.log('About to read...');
         this.ble.read(this.peripheral.id, UNLOCK_SERVICE, LOAN_AVAIL).then(function (buffer) {
             var data = new Uint8Array(buffer);
             console.log('This is the data: ' + data);
@@ -541,10 +552,11 @@ LoanPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-loan',template:/*ion-inline-start:"/Users/erostin/Desktop/smartmory_ble/src/pages/loan/loan.html"*/'\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Loan Device</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n    <ion-item *ngFor="let laptop of compartments; let i = index">\n        <button ion-button default [hidden]="laptop == \'Empty\'" item-center (click)="actLock(i+2);">{{laptop}}</button>\n        </ion-item> \n</ion-content>\n'/*ion-inline-end:"/Users/erostin/Desktop/smartmory_ble/src/pages/loan/loan.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */],
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
         __WEBPACK_IMPORTED_MODULE_2__ionic_native_ble__["a" /* BLE */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* ToastController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ToastController */],
         __WEBPACK_IMPORTED_MODULE_0__angular_core__["P" /* NgZone */]])
 ], LoanPage);
 
@@ -662,10 +674,10 @@ CompleteloanPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-completeloan',template:/*ion-inline-start:"/Users/erostin/Desktop/smartmory_ble/src/pages/completeloan/completeloan.html"*/'\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Complete Loan</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n    <button ion-button default item-center (click)="loanValidate();">Complete Loan</button>\n</ion-content>\n'/*ion-inline-end:"/Users/erostin/Desktop/smartmory_ble/src/pages/completeloan/completeloan.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */],
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
         __WEBPACK_IMPORTED_MODULE_2__ionic_native_ble__["a" /* BLE */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* ToastController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ToastController */],
         __WEBPACK_IMPORTED_MODULE_0__angular_core__["P" /* NgZone */]])
 ], CompleteloanPage);
 
@@ -702,9 +714,10 @@ var LOAN_AVAIL = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF1';
 var LOCK = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF4';
 var NFC_READ = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF3';
 var ReturnPage = (function () {
-    function ReturnPage(navCtrl, navParams, ble, toastCtrl, ngZone) {
+    function ReturnPage(navCtrl, loadingCtrl, navParams, ble, toastCtrl, ngZone) {
         var _this = this;
         this.navCtrl = navCtrl;
+        this.loadingCtrl = loadingCtrl;
         this.navParams = navParams;
         this.ble = ble;
         this.toastCtrl = toastCtrl;
@@ -717,6 +730,7 @@ var ReturnPage = (function () {
     ReturnPage.prototype.ionViewWillEnter = function () {
         console.log('ionViewWillEnter Updating Table');
         this.checkAvailability();
+        this.presentLoadingIos();
     };
     ReturnPage.prototype.onConnected = function (peripheral) {
         var _this = this;
@@ -735,6 +749,14 @@ var ReturnPage = (function () {
     ReturnPage.prototype.exitConnection = function () {
         var _this = this;
         this.ble.disconnect(this.peripheral.id).then(function () { return console.log('Disconnected ' + JSON.stringify(_this.peripheral)); }, function () { return console.log('ERROR disconnecting ' + JSON.stringify(_this.peripheral)); });
+    };
+    ReturnPage.prototype.presentLoadingIos = function () {
+        var loading = this.loadingCtrl.create({
+            spinner: 'ios',
+            content: 'Looking for empty shelves...',
+            duration: 1000
+        });
+        loading.present();
     };
     ReturnPage.prototype.showLongToast = function (phrase) {
         if (phrase == "170") {
@@ -782,10 +804,11 @@ ReturnPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-return',template:/*ion-inline-start:"/Users/erostin/Desktop/smartmory_ble/src/pages/return/return.html"*/'\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Return Device</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n        <button ion-button default item-center (click)="actLock();">Empty Shelf</button>\n        \n</ion-content>\n'/*ion-inline-end:"/Users/erostin/Desktop/smartmory_ble/src/pages/return/return.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */],
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
         __WEBPACK_IMPORTED_MODULE_2__ionic_native_ble__["a" /* BLE */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* ToastController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ToastController */],
         __WEBPACK_IMPORTED_MODULE_0__angular_core__["P" /* NgZone */]])
 ], ReturnPage);
 
@@ -821,9 +844,10 @@ var LOCK = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF4';
 var NFC_READ = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF3';
 var LOAN_STATUS = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF2';
 var ValidatereturnPage = (function () {
-    function ValidatereturnPage(navCtrl, navParams, ble, toastCtrl, ngZone) {
+    function ValidatereturnPage(navCtrl, loadingCtrl, navParams, ble, toastCtrl, ngZone) {
         var _this = this;
         this.navCtrl = navCtrl;
+        this.loadingCtrl = loadingCtrl;
         this.navParams = navParams;
         this.ble = ble;
         this.toastCtrl = toastCtrl;
@@ -833,6 +857,10 @@ var ValidatereturnPage = (function () {
         this.device = navParams.get('device');
         this.ble.connect(this.device.id).subscribe(function (peripheral) { return _this.onConnected(peripheral); }, function (peripheral) { return _this.onDeviceDisconnected(peripheral); });
     }
+    ValidatereturnPage.prototype.ionViewWillEnter = function () {
+        console.log('return validate page');
+        this.presentLoadingIos();
+    };
     ValidatereturnPage.prototype.onConnected = function (peripheral) {
         var _this = this;
         console.log('Connected to ' + peripheral.name + ' ' + peripheral.id);
@@ -846,6 +874,14 @@ var ValidatereturnPage = (function () {
             duration: 3000,
             position: 'center'
         });
+    };
+    ValidatereturnPage.prototype.presentLoadingIos = function () {
+        var loading = this.loadingCtrl.create({
+            spinner: 'ios',
+            content: 'Loading...',
+            duration: 1000
+        });
+        loading.present();
     };
     ValidatereturnPage.prototype.showLongToast = function (phrase) {
         if (phrase == "0") {
@@ -903,10 +939,11 @@ ValidatereturnPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-validatereturn',template:/*ion-inline-start:"/Users/erostin/Desktop/smartmory_ble/src/pages/validatereturn/validatereturn.html"*/'\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Verify Return</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n    <button ion-button default item-center (click)="returnValidate();">Complete Return</button>\n</ion-content>\n'/*ion-inline-end:"/Users/erostin/Desktop/smartmory_ble/src/pages/validatereturn/validatereturn.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */],
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
         __WEBPACK_IMPORTED_MODULE_2__ionic_native_ble__["a" /* BLE */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* ToastController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ToastController */],
         __WEBPACK_IMPORTED_MODULE_0__angular_core__["P" /* NgZone */]])
 ], ValidatereturnPage);
 
@@ -1051,7 +1088,7 @@ var MyApp = (function () {
 MyApp = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/Users/erostin/Desktop/smartmory_ble/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/erostin/Desktop/smartmory_ble/src/app/app.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
 ], MyApp);
 
 //# sourceMappingURL=app.component.js.map

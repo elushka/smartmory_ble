@@ -1,5 +1,5 @@
 import { Component, NgZone } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, LoadingController } from 'ionic-angular';
 import { ToastController } from 'ionic-angular';
 import { BLE } from '@ionic-native/ble';
 
@@ -23,6 +23,7 @@ export class LoanPage {
   pin: number;
   public compartments: any;
   constructor(public navCtrl: NavController,
+              public loadingCtrl: LoadingController,
               public navParams: NavParams,
               private ble: BLE,
               public toastCtrl: ToastController,
@@ -38,6 +39,7 @@ export class LoanPage {
   ionViewWillEnter() {
     console.log('ionViewWillEnter Updating Table');
     this.checkAvailability();
+    this.presentLoadingIos();
   }
 
   onConnected(peripheral) {
@@ -61,6 +63,16 @@ exitConnection() {
         () => console.log('Disconnected ' + JSON.stringify(this.peripheral)),
         () => console.log('ERROR disconnecting ' + JSON.stringify(this.peripheral))
       )
+}
+
+presentLoadingIos() {
+  let loading = this.loadingCtrl.create({
+    spinner: 'ios',
+    content: 'Checking for laptops...',
+    duration: 3000
+  });
+
+  loading.present();
 }
 
 showLongToast(phrase: string) {
@@ -95,6 +107,7 @@ actLock(i){
 }
 
 checkAvailability(){
+  console.log('About to read...');
   this.ble.read(this.peripheral.id,UNLOCK_SERVICE,LOAN_AVAIL).then(
       buffer =>{
         let data = new Uint8Array(buffer);

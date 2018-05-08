@@ -1,5 +1,5 @@
 import { Component, NgZone } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, LoadingController } from 'ionic-angular';
 import { ToastController } from 'ionic-angular';
 import { BLE } from '@ionic-native/ble';
 import { ValidatereturnPage } from '../validatereturn/validatereturn';
@@ -22,6 +22,7 @@ export class ReturnPage {
   pin: number;
   public compartments: any;
   constructor(public navCtrl: NavController,
+              public loadingCtrl: LoadingController,
               public navParams: NavParams,
               private ble: BLE,
               public toastCtrl: ToastController,
@@ -37,6 +38,7 @@ export class ReturnPage {
   ionViewWillEnter() {
     console.log('ionViewWillEnter Updating Table');
     this.checkAvailability();
+    this.presentLoadingIos();
   }
 
   onConnected(peripheral) {
@@ -60,6 +62,16 @@ exitConnection() {
         () => console.log('Disconnected ' + JSON.stringify(this.peripheral)),
         () => console.log('ERROR disconnecting ' + JSON.stringify(this.peripheral))
       )
+}
+
+presentLoadingIos() {
+  let loading = this.loadingCtrl.create({
+    spinner: 'ios',
+    content: 'Looking for empty shelves...',
+    duration: 1000
+  });
+
+  loading.present();
 }
 
   showLongToast(phrase: string) {

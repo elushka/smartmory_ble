@@ -17,6 +17,14 @@ module.exports = [
     ]
   },
   {
+    "id": "cordova-plugin-ionic-webview.ios-wkwebview-exec",
+    "file": "plugins/cordova-plugin-ionic-webview/src/www/ios/ios-wkwebview-exec.js",
+    "pluginId": "cordova-plugin-ionic-webview",
+    "clobbers": [
+      "cordova.exec"
+    ]
+  },
+  {
     "id": "cordova-plugin-splashscreen.SplashScreen",
     "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
     "pluginId": "cordova-plugin-splashscreen",
@@ -48,6 +56,7 @@ module.exports.metadata =
   "cordova-plugin-compat": "1.2.0",
   "cordova-plugin-ble-central": "1.1.4",
   "cordova-plugin-device": "1.1.7",
+  "cordova-plugin-ionic-webview": "1.2.1",
   "cordova-plugin-splashscreen": "4.1.0",
   "cordova-plugin-statusbar": "2.4.1",
   "cordova-plugin-whitelist": "1.3.3",

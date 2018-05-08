@@ -1,5 +1,5 @@
 import { Component, NgZone } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, LoadingController } from 'ionic-angular';
 import { ToastController } from 'ionic-angular';
 import { BLE } from '@ionic-native/ble';
 
@@ -25,6 +25,7 @@ export class ValidatereturnPage {
   pin: number;
   public compartments: any;
   constructor(public navCtrl: NavController,
+              public loadingCtrl: LoadingController,
               public navParams: NavParams,
               private ble: BLE,
               public toastCtrl: ToastController,
@@ -35,6 +36,11 @@ export class ValidatereturnPage {
       peripheral => this.onConnected(peripheral),
       peripheral => this.onDeviceDisconnected(peripheral)      
     );
+  }
+
+  ionViewWillEnter() {
+    console.log('return validate page');
+    this.presentLoadingIos();
   }
 
   onConnected(peripheral) {
@@ -51,6 +57,16 @@ export class ValidatereturnPage {
       duration: 3000,
       position: 'center'
     });
+  }
+
+  presentLoadingIos() {
+    let loading = this.loadingCtrl.create({
+      spinner: 'ios',
+      content: 'Loading...',
+      duration: 1000
+    });
+  
+    loading.present();
   }
   
   showLongToast(phrase: string) {
